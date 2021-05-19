@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+}
+
+.overlay {
+    width: 99vw;
+    height: 99vh;
+    background-color: rgba(255, 255, 255, 0);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+}
+
+.blurBackground {
+    animation: blur 2s ease-in forwards;
+}
+
+.content-container {
+    background-color: lightsteelblue;
+    padding: 50px;
+    height: 100vh;
+}
+
+@keyframes blur {
+    0% { background-color: rgba(255, 255, 255, 0); }
+    100% { background-color: rgba(255, 255, 255, 0.9); }
+}

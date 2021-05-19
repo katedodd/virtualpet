@@ -1,6 +1,6 @@
 export class Nepoet {
 
-    constructor(name, species, age, color, health, hunger, lastFed) {
+    constructor(name, species, age, color, health, hunger, lastFed, img) {
         this._name = name;
         this._species = species;
         this._age = age;
@@ -8,6 +8,7 @@ export class Nepoet {
         this._health = health;
         this._hunger = hunger;
         this._lastFed = lastFed;
+        this._img = img;
     }
 
     get name() {
@@ -64,6 +65,14 @@ export class Nepoet {
 
     set lastFed(value) {
         this._lastFed = value;
+    }
+
+    get img() {
+        return this._img;
+    }
+
+    set img(value) {
+        this._img = value;
     }
 
     lastFedDateDisplay() {

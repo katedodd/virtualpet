@@ -1,5 +1,10 @@
+h1 {
+    text-align: left;
+}
+
 #canvas {
-    border: 3px solid black;
-    height: 100px;
-    width: 100px
+    border: 1px solid gray;
+    height: 320px;
+    width: 320px;
+    margin: 20px;
 }
