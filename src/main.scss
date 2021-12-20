@@ -42,6 +42,22 @@
     height: 100vh;
 }
 
+button {
+    border-radius: 4px;
+    background-color: magenta;
+    padding: 5px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    box-shadow: darkmagenta 0 2px 2px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: darkcyan;
+        box-shadow: black 0 2px 4px;
+    }
+}
+
 @keyframes blur {
     0% { background-color: rgba(255, 255, 255, 0); }
     100% { background-color: rgba(255, 255, 255, 0.9); }

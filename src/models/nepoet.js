@@ -1,6 +1,6 @@
 export class Nepoet {
 
-    constructor(name, species, age, color, health, hunger, lastFed, img) {
+    constructor(name, species, age, color, health, hunger, lastFed, img, hungerInterval) {
         this._name = name;
         this._species = species;
         this._age = age;
@@ -9,6 +9,7 @@ export class Nepoet {
         this._hunger = hunger;
         this._lastFed = lastFed;
         this._img = img;
+        this._hungerInterval = hungerInterval;
     }
 
     get name() {
@@ -75,12 +76,22 @@ export class Nepoet {
         this._img = value;
     }
 
+    get hungerInterval() {
+        return this._hungerInterval;
+    }
+
+    set hungerInterval(value) {
+        this._hungerInterval = value;
+    }
+
     lastFedDateDisplay() {
-        return (this._lastFed.getMonth() + 1) + "/" + this._lastFed.getDate() + "/" + this._lastFed.getFullYear();
+        // return (this._lastFed.getMonth() + 1) + "/" + this._lastFed.getDate() + "/" + this._lastFed.getFullYear();
+        return this._lastFed.toLocaleDateString();
     }
 
     lastFedTimeDisplay() {
-        return this._lastFed.getHours() + ":" + this._lastFed.getMinutes() + ":" + this._lastFed.getSeconds();
+        // return this._lastFed.getHours() + ":" + this._lastFed.getMinutes() + ":" + this._lastFed.getSeconds();
+        return this._lastFed.toLocaleTimeString();
     }
 
     feed(food) {
@@ -89,7 +100,8 @@ export class Nepoet {
         this.becomeHungry(5);
     }
 
-    becomeHungry(interval) {
+    becomeHungry() {
+        let interval = this._hungerInterval;
         interval *= 1000;
         setInterval(() => {
             this._hunger += (Math.floor(-1 * ((new Date()).getTime() - this._lastFed)/interval));
