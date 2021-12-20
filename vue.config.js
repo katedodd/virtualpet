@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/virtualpet/'
+    publicPath: '/project name/'
 }
